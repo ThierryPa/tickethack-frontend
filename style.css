@@ -1,0 +1,226 @@
+.container{
+	display: grid;
+	grid-template-rows: 70px 200px auto;
+	height: 100vh;
+	border: solid pink;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	background-image: url('images/background.jpg');
+	background-size: cover;
+	background-position: 0px 10px 0px 0px;
+	background-repeat: no-repeat;
+}
+
+#header{
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+}
+
+#headerRight{
+	display: flex;
+}
+
+#Cart{
+	font-family:Arial, Helvetica, sans-serif;
+	display: flex;
+	padding: 15px;
+	margin: 10px;
+}
+
+#Bookings{
+	font-family:Arial, Helvetica, sans-serif;
+	display: flex;
+	padding: 15px;
+	margin: 10px;
+}
+
+#Title{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	color: #459e85;
+	display: flex;
+	margin: 10px;
+	padding-right: 70%;
+	align-items: center;
+}
+
+/* Main page */
+#quote{
+	font-family:Arial, Helvetica, sans-serif;
+	display: flex;
+	padding-top: 10px;
+	margin-top: 25px;
+	justify-content: center;
+	font-size: 45px;
+	color: white;
+}
+
+#sidequote{
+	font-family:Arial, Helvetica, sans-serif;
+	display: flex;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+	justify-content: center;
+	font-size: 24px;
+	color: white;
+}
+
+#content{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#inputUser{
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 500px;
+	width: 450px;
+	margin-top: 75px;
+	padding-top: 50px;
+	box-sizing: border-box;
+	border-radius: 15px;
+}
+
+.divider{
+	height: 1px;
+	background-color: grey;
+	width: 300px;
+}
+
+.inp{
+	padding-left: 15px;
+	width: 300px;
+	height: 50px;
+	border-radius: 5px;
+	border: none;
+	background-color:whitesmoke
+}
+
+#search{
+	background-color: #459e85;
+	color: white;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: x-large;
+}
+
+
+#arrival{
+	margin-bottom: 40px;
+}
+
+#search{
+	margin-top: 160px;
+}
+
+
+#tripsList{
+	background-color: white;
+	margin-top: 75px;
+	height: 500px;
+	width: 450px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	overflow: auto;
+}
+
+#img{
+	width: 150px;
+	height: 150px;
+}
+
+#divider{
+	padding-top: 25px;
+	padding-bottom: 40px;
+	color: #459e85;
+}
+
+#littlePhrase{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: x-large;
+}
+
+.containerTrips{
+	display: flex;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: #f5eeee;
+	margin: 10px;
+	align-items: center;
+}
+
+.tripsCont{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.inpList {
+	background-color: #459e85;
+	color: white;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: medium;
+	width: 55px;
+	height: 35px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 10px;
+	border: none;
+	border-radius: 5px;
+}
+/* Bookings page */
+
+#bookings{
+	border: solid red;
+	height: 92.5vh;
+	background-color: lightgray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#bookingContent{
+	border: solid orange;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	background-color: white;
+	width: 90vh;
+	height: 20vh;
+}
+#containerBook{
+	border: solid ;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #f5eeee;
+	width: 75vh;
+}
+
+.dividerBooks{
+	margin-top: 50px;
+	height: 1px;
+	background-color: black;
+	width: 300px;
+}
+
+#enjoyBook{
+	color: #459e85;
+}
+
+/* 
+.setup{
+	border: solid red;
+} */

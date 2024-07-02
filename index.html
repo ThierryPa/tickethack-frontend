@@ -3,10 +3,42 @@
 
 <head>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    
+</style>
 </head>
 
 <body>
-  <div id="header">
+  <div class="container">
+      <div id="header">
+        <div></div>
+        <div  id="Title">Tickethack</div>
+        <div id ="headerRight">
+          <div  id="Cart">Cart</div>
+          <div  id="Bookings">Bookings</div>
+        </div>
+      </div>
+      <div id="midcontent">
+          <div  id="quote">Explore the world effortlessly by train!</div>
+          <div  id="sidequote">Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack</div>
+      </div>
+      <div id="content">
+        <div id="inputUser">
+          <input type="text" placeholder="Departure" class="inp" id="departure">
+          <div class="divider"></div>
+          <input type="text" placeholder="Arrival" class="inp" id="arrival">
+          <input type="date" class="inp" id="date">
+          <button class="inp" id="search">Search</button>
+        </div>
+        <div id="tripsList">
+            <!-- <div> <img id="img" src="./images/train.png"> </div>
+            <div id="divider">_____________________________</div>
+            <div id="littlePhrase">
+              it's time to book your future trip
+            </div> -->
+            <div class="containerTrips"> <div class="tripsCont"> Departure > Arrival </div> <div class="tripsCont">17h34</div> <div class="tripsCont">130€</div><button class="inpList" id="bookButton">Book</button></div>
+        </div>
+      </div>
   </div>
 
   <script src="script.js"></script>
