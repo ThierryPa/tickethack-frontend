@@ -47,6 +47,7 @@ body{
 	margin: 10px;
 	padding-right: 70%;
 	align-items: center;
+	flex: 1;
 }
 
 /* Main page */
@@ -184,40 +185,170 @@ body{
 /* Bookings page */
 
 #bookings{
-	border: solid red;
-	height: 92.5vh;
+	height: 95vh;
 	background-color: lightgray;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 #bookingContent{
-	border: solid orange;
 	display: flex;
 	flex-direction: column;
 	align-items:center;
 	justify-content: center;
 	background-color: white;
 	width: 90vh;
-	height: 20vh;
-}
-#containerBook{
-	border: solid ;
-	display: flex;
-	justify-content: space-evenly;
-	background-color: #f5eeee;
-	width: 75vh;
+	height: auto;
+	border-radius: 20px;
 }
 
+#bookTxt{
+	margin-top: 50px;
+	margin-bottom: 25px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: larger;
+}
+
+#containerBook{
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: #f5eeee;
+	width: 75vh;
+	font-size: large;
+	height: 65px;
+	border-radius: 5px;
+}
+
+
+.bookCont{
+	margin: 5px;
+}
 .dividerBooks{
 	margin-top: 50px;
+	margin-bottom: 25px;
 	height: 1px;
 	background-color: black;
 	width: 300px;
 }
 
+#planATrip{
+	font-family:Arial, Helvetica, sans-serif;
+	color: black;
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
 #enjoyBook{
+	font-family:Arial, Helvetica, sans-serif;
 	color: #459e85;
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+
+/* Cart Page */
+
+#cart{
+	height: 95vh;
+	background-color: lightgray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#cartContent{
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	background-color: white;
+	width: 90vh;
+	height: auto;
+	border-radius: 20px;
+}
+
+#cartTxt{
+	margin-top: 50px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: larger;
+}
+
+#containerCart{
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: #f5eeee;
+	width: 75vh;
+	font-size: large;
+	height: 65px;
+	border-radius: 5px;
+}
+
+
+.cartCont{
+	margin: 5px;
+}
+
+.cartDelete{
+	margin: 15px;
+	background-color: #459e85;
+	color: white;
+	border: none;
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+}
+
+#bottomCart{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 30px;
+	background-color: #00143d;
+	width: 90vh;
+	border-end-end-radius: 20px;
+	border-bottom-left-radius: 20px;
+	color: white;
+	height: 90px;
+}
+
+#total{
+	box-sizing: border-box;
+	flex: 1;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: x-large;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+	overflow: auto;
+	padding-left: 35px;
+}
+
+#checkout{
+	margin-right: 20px;
+	background-color: #459e85;
+	color: white;
+	font-size: larger;
+	border: none;
+	height: 45px;
+	width: 110px;
+	border-radius: 5px;
+}
+
+
+#planATrip{
+	font-family:Arial, Helvetica, sans-serif;
+	color: black;
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+#enjoyBook{
+	font-family:Arial, Helvetica, sans-serif;
+	color: #459e85;
+	margin-top: 25px;
+	margin-bottom: 50px;
 }
 
 /* 
