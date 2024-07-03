@@ -1,5 +1,5 @@
-const url = 'http://localhost:3000/trips'
-const urlCart = 'http://localhost:3000/carts'
+const url = 'https://tickethack-backend-mu.vercel.app/trips'
+const urlCart = 'https://tickethack-backend-mu.vercel.app/carts'
 
 Load();
 

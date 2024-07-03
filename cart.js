@@ -1,4 +1,5 @@
-const urlCart = `http://localhost:3000/carts`;
+const urlCart = `https://tickethack-backend-mu.vercel.app/carts`;
+const urlBookings = `https://tickethack-backend-mu.vercel.app/bookings`;
 
 Load()
 
@@ -29,15 +30,25 @@ function Load(){
                             <button class="cartDelete" id="${data[i]._id}">X</button>
                         </div>`
                     }
-
-                    for(let i = 0 ; i<data.length ; i++){
-                        document.getElementById(data[i]._id)
-                        .addEventListener("click", () => onDelete(data[i]._id));
-                    }
                     resultsDiv.innerHTML += `<div id="bottomCart">
                      <div id="total">Total: ${TotalPrice}€</div>
                      <button id="checkout">Purchase</button>
                      <div>`
+
+                     for(let i = 0 ; i<data.length ; i++){
+                        console.log(data[i]._id)
+                        document.getElementById(data[i]._id).addEventListener("click", () => onDelete(data[i]._id));
+                    }
+
+                    document.querySelector("#checkout").addEventListener('click', ()=> {
+                        
+                        for(let i=0 ; i<data.length ;i++){
+                            console.log(data[i]._id)
+                            onBookAdd(data[i]._id)
+                            onDelete(data[i]._id)
+                        }
+                         window.location.assign("bookings.html")
+                    })
                 }
             })
             .catch(error=>{
@@ -52,6 +63,19 @@ function onDelete(id){
     fetch(`${urlCart}/${urlId}`,{
         method: 'DELETE'
       }).then(() => {
-        console.log('deleted');
+        Load();
       })
 }
+
+function onBookAdd(id){
+    const urlId = id;
+
+    fetch(`${urlBookings}/${urlId}`,{
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify()
+    }).then(() => {
+      console.log('added');
+    });
+}
+

@@ -1,11 +1,11 @@
-// //Booking => écrire checkDate(data.date)
-// function checkDate(date = new Date ('2024-07-02T08:32:03.428+00:00')) {
-//     const myDate = moment(date).fromNow();
-//     return myDate;
-// }
-// console.log(checkDate())
+ //Booking => écrire checkDate(data.date)
+function checkDate(date = new Date ('2024-07-02T08:32:03.428+00:00')) {
+    const myDate = moment(date).fromNow();
+     return myDate;
+ }
+ console.log(checkDate())
 
-const url = `http://localhost:3000/bookings`;
+const url = `https://tickethack-backend-mu.vercel.app/bookings`;
 
 Load()
 
@@ -33,7 +33,7 @@ function Load(){
                         <div class="bookCont">${data[i].departure} > ${data[i].arrival}</div>
                         <div class="bookCont">${moment(data[i].date).format("HH:mm")}</div>
                         <div class="bookCont">${data[i].price}€</div>
-                        <div class="bookCont">Departure in 5 hours</div>
+                        <div class="bookCont">Departure ${checkDate(data[i].date)}</div>
                     </div>`
 
                     

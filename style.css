@@ -2,7 +2,6 @@
 	display: grid;
 	grid-template-rows: 70px 200px auto;
 	height: 100vh;
-	border: solid pink;
 }
 
 body{
@@ -158,6 +157,8 @@ body{
 	background-color: #f5eeee;
 	margin: 10px;
 	align-items: center;
+	justify-content: space-between;
+	width: 330px;
 }
 
 .tripsCont{
