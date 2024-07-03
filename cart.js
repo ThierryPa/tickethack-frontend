@@ -1,14 +1,14 @@
-const url = `http://localhost:3000/trips/carts`;
+const urlCart = `http://localhost:3000/carts`;
 
 Load()
 
 function Load(){
-
+    let TotalPrice=0
     document.querySelector('#Title').addEventListener('click',() => {window.location.assign("index.html");})
     document.querySelector('#Bookings').addEventListener('click',() => {window.location.assign("bookings.html");})
     document.querySelector('#Cart').addEventListener('click',() => {window.location.assign("cart.html");})
 
-    fetch(url)
+    fetch(urlCart)
             .then(response => response.json())
             .then(data =>{
                 const resultsDiv = document.getElementById('cartContent')
@@ -21,15 +21,21 @@ function Load(){
                 } else {
                     resultsDiv.innerHTML = ''
                     for(let i = 0 ; i<data.length ; i++){
+                    TotalPrice += data[i].price
                     resultsDiv.innerHTML += `<div id="containerCart">
                             <div class="cartCont">${data[i].departure} > ${data[i].arrival}</div>
                             <div class="cartCont">${moment(data[i].date).format('HH:mm')}</div>
                             <div class="cartCont">${data[i].price}€</div>
-                            <button class="cartDelete">X</button>
+                            <button class="cartDelete" id="${data[i]._id}">X</button>
                         </div>`
                     }
+
+                    for(let i = 0 ; i<data.length ; i++){
+                        document.getElementById(data[i]._id)
+                        .addEventListener("click", () => onDelete(data[i]._id));
+                    }
                     resultsDiv.innerHTML += `<div id="bottomCart">
-                     <div id="total">Total: 130€</div>
+                     <div id="total">Total: ${TotalPrice}€</div>
                      <button id="checkout">Purchase</button>
                      <div>`
                 }
@@ -38,4 +44,14 @@ function Load(){
                 console.error('Error fetching trips', error)
             })
     
+}
+
+function onDelete(id){
+    const urlId = id;
+    console.log('fonction appelée')
+    fetch(`${urlCart}/${urlId}`,{
+        method: 'DELETE'
+      }).then(() => {
+        console.log('deleted');
+      })
 }

@@ -1,3 +1,6 @@
+const url = 'http://localhost:3000/trips'
+const urlCart = 'http://localhost:3000/carts'
+
 Load();
 
 function Load() {
@@ -18,9 +21,9 @@ function Load() {
 
     console.log(departure, arrival, date);
 
-    const url = `http://localhost:3000/trips/${departure}/${arrival}/${date}`;
+    
 
-    fetch(url)
+    fetch(`${url}/${departure}/${arrival}/${date}`)
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.getElementById("tripsList");
@@ -34,21 +37,20 @@ function Load() {
         } else {
           resultsDiv.innerHTML = "";
           for (let i = 0; i < data.length; i++) {
-            resultsDiv.innerHTML += `<div class="containerTrips"> <div class="tripsCont"> ${
-              data[i].departure
-            } > ${data[i].arrival} </div> <div class="tripsCont">${moment(
-              data[i].date
-            ).format("HH:mm")}</div> <div class="tripsCont">${
-              data[i].price
-            }€</div><button class="inpList" id="${
-              data[i].id
-            }">Book</button></div>`;
-            console.log(`#${data[i].id}`)
-            document.getElementById(`#${data[i].id}`).addEventListener('click', () => onBook(`#${data[i].id}`))
+            resultsDiv.innerHTML += 
+            `<div class="containerTrips"> 
+                <div class="tripsCont">${data[i].departure} > ${data[i].arrival} 
+                </div> <div class="tripsCont">${moment(data[i].date).format("HH:mm")}
+                </div> <div class="tripsCont">${data[i].price}€
+                </div><button class="inpList" id="${data[i]._id}">Book</button></div>`;
             
           }
 
-          
+          for (let i = 0; i < data.length; i++){
+            document.getElementById(data[i]._id)
+              .addEventListener("click", () => onBook(data[i]._id));
+          }
+         
         }
       })
       .catch((error) => {
@@ -58,12 +60,13 @@ function Load() {
 }
 
 function onBook(id) {
-  console.log(`booking with ID : ${id}`);
-  const urlId = document.querySelector(`#${data[i].id}`);
+  const urlId = id;
 
-  const url = `http://localhost:3000/trips/${urlId}`;
-
-  fetch(url).then((data) => {
+  fetch(`${urlCart}/${urlId}`,{
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify()
+  }).then(() => {
     window.location.assign("cart.html");
   });
 }
